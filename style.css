@@ -70,3 +70,41 @@ type-display {
   color: red;
   text-decoration: underline;
 }
+
+@media(max-width: 600px) {
+  body {
+    overflow: scroll;
+  }
+
+  .timer {
+    position: absolute;
+    top: 3rem;
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(202, 82, 87);
+  }
+
+  .container {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 3rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    min-height: 600px;
+    max-width: 90%;
+  }
+
+  .container .type-Input {
+    margin-top: 1rem;
+    font-size: 5px;
+  }
+
+  .type-Input {
+    outline: none;
+    width: 100%;
+    height: 10rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+}
