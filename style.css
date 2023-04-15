@@ -18,12 +18,19 @@ body {
   background-color: beige;
   font-size: 2.4rem;
   font-weight: 600;
-  padding: 4rem;
+  padding: 2rem;
   border-radius: 0.5rem;
   width: 1000px;
   min-height: 600px;
   max-width: 90%;
   box-shadow: 2px 5px 6px #160120;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3.0rem;
+  color: #40a070;
+  margin-bottom: 2rem;
 }
 
 .container .type-Input {
@@ -92,6 +99,12 @@ type-display {
     width: 100%;
     min-height: 600px;
     max-width: 90%;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
   }
 
   .container .type-Input {
