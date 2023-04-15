@@ -12,10 +12,12 @@ body {
   overflow: hidden;
   background: linear-gradient(to left top, #b6b6b7, #b2b2b5);
   font-family: "Poppins", sans-serif;
+  color: #4d4d4d;
 }
 
 .container {
-  background-color: beige;
+  text-align: center;
+  background-color: #f2f2f2;
   font-size: 2.4rem;
   font-weight: 600;
   padding: 2rem;
@@ -35,25 +37,30 @@ h1 {
 
 .container .type-Input {
   margin-top: 4rem;
-  font-size: 3rem;
+  font-size: 2rem;
+}
+
+.timercontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .timer {
-  position: absolute;
-  top: 2rem;
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bold;
-  color: rgb(202, 82, 87);
+  color: #40a070;
 }
 
-type-display {
+.type-Display {
+  text-align: start;
   margin-bottom: 1rem;
   margin-left: 1rem;
 }
 
 .type-Input {
   background: transparent;
-  border: 2px solid rgb(202, 82, 87);
+  border: 2px solid #40a070;
   outline: none;
   width: 100%;
   height: 14rem;
@@ -65,7 +72,8 @@ type-display {
 }
 
 .type-Input:focus {
-  border-color: #000;
+  border: 3px solid #40a070;
+  ;
 }
 
 
@@ -78,18 +86,43 @@ type-display {
   text-decoration: underline;
 }
 
+.status-area {
+  margin: 20px 0;
+  font-size: 18px;
+  color: #4d4d4d;
+}
+
+.speed-value {
+  font-weight: bold;
+  color: #40a070;
+}
+
+.accuracy-value {
+  font-weight: bold;
+  color: #40a070;
+}
+
+.start-button {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #40a070;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-button:hover {
+  background-color: #357357;
+}
+
+
 @media(max-width: 600px) {
   body {
     overflow: scroll;
   }
 
-  .timer {
-    position: absolute;
-    top: 3rem;
-    font-size: 2rem;
-    font-weight: bold;
-    color: rgb(202, 82, 87);
-  }
 
   .container {
     font-size: 1rem;
@@ -105,6 +138,11 @@ type-display {
     text-align: center;
     font-size: 1.4rem;
     margin-bottom: 1rem;
+  }
+
+  .timer {
+    font-size: 2rem;
+    font-weight: bold;
   }
 
   .container .type-Input {

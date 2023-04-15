@@ -8,13 +8,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="timer" id="timer">0</div>
   <div class="container">
     <h1>タイピングソフト</h1>
+    <div class="timercontainer">
+      <p>time:</p>
+      <div class="timer" id="timer">
+        0</div>
+    </div>
 
     <div class="type-Display" id="typeDisplay"></div>
-    <textarea class="type-Input" id="typeInput" autofocus placeholder="文章を入力してください"></textarea>
+    <textarea class="type-Input" id="typeInput" autofocus placeholder="ここに入力してください"></textarea>
+    <div class="status-area">
+      <div class="speed">スピード: <span class="speed-value">0</span> WPM</div>
+      <div class="accuracy">正確性: <span class="accuracy-value">0</span>%</div>
+    </div>
+    <button class="start-button">開始</button>
   </div>
+</div>
   <script src="./script.js"></script>
 </body>
 </html>
