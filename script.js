@@ -2,6 +2,7 @@ const RANDOM_SENTENCE_URL_API = "https://api.quotable.io/random";
 const typeDisplay = document.getElementById("typeDisplay");
 const typeInput = document.getElementById("typeInput");
 const timer = document.getElementById("timer");
+const accuracyValue = document.querySelector(".accuracy-value");
 
 const typeSound = new Audio("./audio/typing-sound.mp3");
 const wrongSound = new Audio("./audio/wrong.mp3");
@@ -11,8 +12,7 @@ const correctSound = new Audio("./audio/correct.mp3");
 function startGame() {
   RenderNextSentence();
   StartTimer();
-
-  // テキスト入力欄を活性化する
+  incorrectChars = 0; // ミスタイプ回数を初期化する
   typeInput.disabled = false;
   typeInput.focus();
 }
@@ -45,6 +45,9 @@ typeInput.addEventListener("input", (event) => {
       wrongSound.currentTime = 0;
 
       correct = false;
+      // 誤タイプの回数をカウント
+      incorrectChars++;
+      accuracyValue.innerText = incorrectChars;
     }
   });
 
