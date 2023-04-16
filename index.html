@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>typing game</title>
+  <title>Typing Game</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,7 +17,6 @@
     </div>
 
     <div class="type-Display" id="typeDisplay"></div>
-    <!-- textarea に disabled 属性を追加して、最初は入力できないようにします -->
     <textarea class="type-Input" id="typeInput" autofocus disabled placeholder="ここに入力してください。&#10;正解したらエンターキーを押して次に進む。"></textarea>
 
     <div class="status-area">
@@ -25,11 +24,8 @@
       <div class="accuracy">ミスの回数: <span class="accuracy-value">0</span>回</div>
     </div>
 
-    <!-- ここに開始ボタンを追加します -->
     <button class="start-button" onclick="startGame()">開始</button>
-
   </div>
-  <!-- スクリプトをインポート -->
   <script src="./script.js"></script>
 </body>
 </html>

@@ -13,10 +13,11 @@ let incorrectChars = 0;
 let correctChars = 0;
 let totalChars = 0;
 let totalTime = 0;
+const timerInitialValue = 60;
 
 function startGame() {
-  RenderNextSentence();
-  StartTimer();
+  renderNextSentence();
+  startTimer();
   incorrectChars = 0;
   correctChars = 0;
   totalChars = 0;
@@ -66,22 +67,22 @@ typeInput.addEventListener("input", (event) => {
 
     let time = getTimerTime();
     totalTime += time;
-    let speed = totalChars / totalTime;
+    let speed = Math.max(0, (correctChars - incorrectChars) / totalTime);
     speedValue.innerText = speed.toFixed(1);
 
-    RenderNextSentence();
+    typeInput.value = ""; // テキストエリアをクリア
+    renderNextSentence();
   }
 });
 
-function GetRandomSentence() {
+function getRandomSentence() {
   return fetch(RANDOM_SENTENCE_URL_API)
     .then((response) => response.json())
     .then((data) => data.content);
 }
 
-async function RenderNextSentence() {
-  const sentence = await GetRandomSentence();
-  console.log(sentence);
+async function renderNextSentence() {
+  const sentence = await getRandomSentence();
 
   typeDisplay.innerText = "";
 
@@ -89,7 +90,6 @@ async function RenderNextSentence() {
   oneText.forEach((character) => {
     const characterSpan = document.createElement("span");
     characterSpan.innerText = character;
-    console.log(characterSpan);
     typeDisplay.appendChild(characterSpan);
     characterSpan.classList.add("correct");
     characterSpan.classList.remove("correct");
@@ -100,10 +100,9 @@ async function RenderNextSentence() {
 }
 
 let startTime;
-let originTime = 60;
 let timerInterval;
-function StartTimer() {
-  timer.innerText = originTime;
+function startTimer() {
+  timer.innerText = timerInitialValue;
   startTime = new Date();
 
   if (timerInterval) {
@@ -111,9 +110,9 @@ function StartTimer() {
   }
 
   timerInterval = setInterval(() => {
-    timer.innerText = originTime - getTimerTime();
+    timer.innerText = timerInitialValue - getTimerTime();
     if (timer.innerText <= 0) {
-      TimeUp();
+      timeUp();
       clearInterval(timerInterval);
     }
   }, 1000);
@@ -123,7 +122,7 @@ function getTimerTime() {
   return Math.floor((new Date() - startTime) / 1000);
 }
 
-function TimeUp() {
+function timeUp() {
   clearInterval(timerInterval);
   typeInput.disabled = true;
 }

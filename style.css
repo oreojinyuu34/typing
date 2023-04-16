@@ -17,7 +17,7 @@ body {
 
 .container {
   text-align: center;
-  background-color: #f2f2f2;
+  background-color: #fefefe;
   font-size: 2.4rem;
   font-weight: 600;
   padding: 2rem;
@@ -88,7 +88,7 @@ h1 {
 
 .status-area {
   margin: 20px 0;
-  font-size: 18px;
+  font-size: 1.4rem;
   color: #4d4d4d;
 }
 
@@ -103,8 +103,8 @@ h1 {
 }
 
 .start-button {
-  font-size: 18px;
-  padding: 10px 20px;
+  font-size: 1.4rem;
+  padding: 10px 50px;
   background-color: #40a070;
   color: #fff;
   border: none;
