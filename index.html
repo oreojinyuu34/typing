@@ -17,14 +17,17 @@
     </div>
 
     <div class="type-Display" id="typeDisplay"></div>
-    <textarea class="type-Input" id="typeInput" autofocus placeholder="ここに入力してください"></textarea>
+    <!-- textarea に disabled 属性を追加して、最初は入力できないようにします -->
+    <textarea class="type-Input" id="typeInput" autofocus disabled placeholder="ここに入力してください。&#10;正解したらエンターキーを押して次に進む。"></textarea>
+
+
     <div class="status-area">
-      <div class="speed">スピード: <span class="speed-value">0</span> WPM</div>
-      <div class="accuracy">正確性: <span class="accuracy-value">0</span>%</div>
+      <div class="speed">平均タイプ数: <span class="speed-value">0</span> 回/秒</div>
+      <div class="accuracy">ミスの回数: <span class="accuracy-value">0</span>回</div>
     </div>
-    <button class="start-button">開始</button>
+    <button class="start-button" onclick="startGame()">開始</button>
+
   </div>
-</div>
   <script src="./script.js"></script>
 </body>
 </html>
